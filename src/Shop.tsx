@@ -1,25 +1,28 @@
-import React, { useContext, useState } from 'react'
-import { AllDataStore } from './DataContext';
 import { PlantIntrfc } from './PlantIntrfc';
 import PlantCard from './PlantCard';
 import './shop.css'
 import SearchByType from './SearchByType';
+import { useFetchData } from './fetchDataHook';
+import { useState } from 'react';
+
 
 function Shop() {
-  const {plantsArr,setPlantsArr}= useContext(AllDataStore);
 
+  const {data} :{data:any} = useFetchData();
+  const [type, setType] = useState('all');
 
   return (
     <div>
       <div id="headerDiv">
       <h1>Our Shop</h1>
+      <h2>{type}</h2>
       </div>
       
-      <SearchByType ></SearchByType>
+      <SearchByType  changeType={setType} ></SearchByType>
 
       {<div className='productDiv'>
-      {plantsArr.map(( curr:PlantIntrfc)=>{ 
-          return <PlantCard 
+      {data && data.map(( curr:PlantIntrfc)=>{ 
+          return (type === 'all' || curr.type.toLowerCase()=== type.toLowerCase()) && <PlantCard 
           name={curr.name} price={curr.price} 
           type={curr.type} season={curr.season}
            lighting_requirements={curr.lighting_requirements} 
@@ -34,6 +37,4 @@ function Shop() {
 
 export default Shop
 
-function useEffect(arg0: () => void, arg1: never[]) {
-  throw new Error('Function not implemented.');
-}
+
