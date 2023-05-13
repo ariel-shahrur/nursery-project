@@ -1,0 +1,16 @@
+.galleryImg img{
+    width: 100%;
+    height: 100%;
+    image-rendering: pixelated;
+}
+
+.galleryImg{
+    width: 20%;
+    height: 150px;
+}
+
+.galleryDiv{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}

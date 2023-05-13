@@ -1,0 +1,8 @@
+#footerDiv{
+    display: flex;
+    justify-content: space-around;
+    padding: 30px;
+}
+.footerlastDivItem{
+    padding: 5px;
+}

@@ -1,0 +1,20 @@
+.navBar{
+    display: flex;
+    justify-content: space-between;
+    margin-right: 15px;
+    padding: 20px;
+    
+}
+.navItem {
+    font-size: large;
+    font-style: italic;
+    line-height: 100px;
+  height: 100px;
+}
+
+.navItem img{
+    width: 100px;
+    height: 100px;
+}
+
+ 

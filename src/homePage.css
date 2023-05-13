@@ -1,0 +1,18 @@
+
+
+#categoryDiv{
+    padding: 50px;
+    text-align: center;
+}
+
+#categoryTypeDiv{
+    width: 50%;
+    margin: auto;
+    display: flex;
+    justify-content: space-around;
+    margin-top: 30px;
+}
+#categoryTypeDiv img{
+    width: 100px;
+    height: 100px;
+}

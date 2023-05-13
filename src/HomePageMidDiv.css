@@ -1,0 +1,63 @@
+.homePageMidDiv{
+    display: flex;
+    justify-content: space-around;
+    /* background-color: rgb(224, 224, 224); */
+}
+
+.homeImgDiv1 {
+    padding: 50px;
+    width: 60%;
+   background-image: url("backgroundImgforhomeImgDiv.jpg");
+   background-size: 100% 100%;
+   background-repeat: no-repeat;
+}
+.homeImgDiv2 {
+    padding: 50px;
+    width: 60%;
+   background-image: url("backgroundImgforhomeImgDiv1.png");
+   background-size: 100% 100%;
+   background-repeat: no-repeat;
+}
+.homeImgDiv3 {
+    padding: 50px;
+    width: 60%;
+   background-image: url("backgroundImgforhomeImgDiv2.png");
+   background-size: 100% 100%;
+   background-repeat: no-repeat;
+}
+#rightDivHomePage{
+    /* border: 2px solid red; */
+    width: 30%;
+    
+}
+
+.rightDivItemUp{
+    height: 45%;
+    padding: 20px;
+    background-image: url("indoorImgForHomePageTitel.png");
+    background-size: 100% 100%;
+   background-repeat: no-repeat;
+   margin-bottom: 20px;
+}
+
+.rightDivItemDown{
+    height: 45%;
+    padding: 20px;
+    background-image: url("outdoorImgForHomePageTitel.png");
+    background-size: 100% 100%;
+   background-repeat: no-repeat;
+}
+
+.dotDiv{
+    display: flex;
+    margin: 0 25%;
+    margin-right: 200px;
+    width: 20%;
+    /* border: 2px solid red; */
+}
+
+.dot{
+    width: 30%;
+    /* border: 2px solid red; */
+}
+
