@@ -6,7 +6,7 @@ import { useFetchData } from './fetchDataHook';
 import { useState } from 'react';
 
 
-function Shop() {
+function Shop(props: {addToCart: Function,addToWishList:Function}) {
 
   const {data} :{data:any} = useFetchData();
   const [type, setType] = useState('all');
@@ -15,19 +15,21 @@ function Shop() {
     <div>
       <div id="headerDiv">
       <h1>Our Shop</h1>
-      <h2>{type}</h2>
       </div>
       
       <SearchByType  changeType={setType} ></SearchByType>
 
       {<div className='productDiv'>
       {data && data.map(( curr:PlantIntrfc)=>{ 
-          return (type === 'all' || curr.type.toLowerCase()=== type.toLowerCase()) && <PlantCard 
+          return (type === 'all' || curr.type.toLowerCase()=== type.toLowerCase()) && 
+          <PlantCard 
           name={curr.name} price={curr.price} 
           type={curr.type} season={curr.season}
            lighting_requirements={curr.lighting_requirements} 
            description={curr.description} 
            image_url={curr.image_url} key={curr.key}
+           onClick={() => {props.addToCart(curr)}}
+           onClickWishList={()=>{props.addToWishList(curr)}}
            ></PlantCard>
           })}
     </div>}

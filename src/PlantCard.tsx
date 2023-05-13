@@ -12,7 +12,10 @@ function PlantCard(
     season:string,
     lighting_requirements:string,
     description:string,
-    image_url:string})
+    image_url:string, 
+    onClick: Function,
+    onClickWishList:Function
+  })
     {
      
   return (
@@ -22,8 +25,8 @@ function PlantCard(
         <h6>{props.price}$</h6>
         <p>{props.description}</p>
         <div id="butnWishIconDiv">
-        <button>Add to cart</button>
-        <img src={wishListIcon} alt="" id="wishListIcon"/>
+        <button onClick={()=>{props.onClick()}}>Add to cart</button>
+        <img onClick={()=>{props.onClickWishList()}} src={wishListIcon} alt="" id="wishListIcon"/>
         </div>
     </div>
   )
