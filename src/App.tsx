@@ -46,14 +46,17 @@ function App() {
 
     <div className="App">
       <Nav></Nav>
+      <hr />
       <Routes>
       <Route path="/" element={<HomePage />} />
       <Route path="/shop" element={<Shop addToCart={addToCart} addToWishList={addToWishList} />} />
+      <Route path="/shop/:type" element={<Shop addToCart={addToCart} addToWishList={addToWishList} />} />
       <Route path="/gallery" element={<Gallery />} />
       <Route path="/wishList" element={<WishList wishList={wishList} addToCart={addToCart} removeFromWishList={removeFromWishList} />} />
       <Route path="/contactus" element={<ContactUs />} />
       <Route path="/cart" element={<Cart cart={cart} removeFromCart={removeFromCart} cartSum={cartSum}/>} />
       </Routes>
+      <hr />
       <Footer></Footer>
     </div>
   );

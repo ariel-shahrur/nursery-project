@@ -31,7 +31,9 @@ function Footer() {
         <div className="footerItem">
             <h5>Our Shop</h5>
             {typeSElectBoxArr.map((curr)=>{
-        return curr.value==="all"||<div key={curr.key}>{curr.displayStr}</div>
+        return curr.value==="all"||< div key={curr.key}>
+        <Link  to={curr.link} style={{ textDecoration: 'none',color: '#000000'  }}>{curr.displayStr}</Link>
+        </div>
       })}
         </div>
         <div className="footerItem">

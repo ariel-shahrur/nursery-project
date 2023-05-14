@@ -1,20 +1,19 @@
 .navBar{
     display: flex;
     justify-content: space-between;
-    margin-right: 15px;
-    padding: 20px;
-    
+    height: 80px;
+    margin-right: 2%;
 }
 .navItem {
     font-size: large;
     font-style: italic;
-    line-height: 100px;
-  height: 100px;
+    line-height: 80px;
+  height: 100%;
 }
 
 .navItem img{
-    width: 100px;
-    height: 100px;
+    width: 80px;
+    height: 100%;
 }
 
  

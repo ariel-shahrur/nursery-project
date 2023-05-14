@@ -19,21 +19,36 @@ setTimeout(() => {
         <div className='homePageMidDiv'>
 
       {theCurrentPart===0 && <div className='homeImgDiv1'>
-        <h1>Perfect plant</h1>
+        <h1>Perfect <span style={{color:"green"}}>plant</span></h1>
         <p>Up To 50% Off Scullants Plants</p>
-        <Link to='/shop' style={{ textDecoration: 'none',color: '#9f9b9b'  }}>shop Now</Link>
+        <Link to='/shop' style={{ textDecoration: 'none',color: '#4ab017', fontWeight:"bold"  }}>shop Now</Link>
+        <div className='dotDiv'>
+        <div className='dot' onClick={()=>{setTheCuurentPart(0)}}>O</div>
+        <div className='dot' onClick={()=>{setTheCuurentPart(1)}}>O</div>
+        <div className='dot' onClick={()=>{setTheCuurentPart(2)}}>O</div>
+    </div>
       </div>}
     
       {theCurrentPart===1 && <div className='homeImgDiv2'>
-        <h1>End Of Season</h1>
+        <h1>End Of <span style={{color:"green"}}>Season</span></h1>
         <p>Save Up To 30%</p>
-        <Link to='/shop' style={{ textDecoration: 'none',color: '#9f9b9b'  }}>shop Now</Link>
+        <Link to='/shop' style={{ textDecoration: 'none',color: '#4ab017' , fontWeight:"bold" }}>shop Now</Link>
+        <div className='dotDiv'>
+        <div className='dot' onClick={()=>{setTheCuurentPart(0)}}>O</div>
+        <div className='dot' onClick={()=>{setTheCuurentPart(1)}}>O</div>
+        <div className='dot' onClick={()=>{setTheCuurentPart(2)}}>O</div>
+    </div>
       </div>}
 
       {theCurrentPart===2 && <div className='homeImgDiv3'>
-        <h1>Pot and Planter</h1>
+        <h1>Pot and <span style={{color:"green"}}>Planter</span></h1>
         <p>A wide variety of Pot and Planter</p>
-        <Link to='/shop' style={{ textDecoration: 'none',color: '#9f9b9b'  }}>shop Now</Link>
+        <Link to='/shop' style={{ textDecoration: 'none',color: '#4ab017', fontWeight:"bold"  }}>shop Now</Link>
+        <div className='dotDiv'>
+        <div className='dot' onClick={()=>{setTheCuurentPart(0)}}>O</div>
+        <div className='dot' onClick={()=>{setTheCuurentPart(1)}}>O</div>
+        <div className='dot' onClick={()=>{setTheCuurentPart(2)}}>O</div>
+    </div>
       </div>}
 
 
@@ -46,11 +61,11 @@ setTimeout(() => {
           </div>
         </div>
     </div>
-    <div className='dotDiv'>
+    {/* <div className='dotDiv'>
         <div className='dot' onClick={()=>{setTheCuurentPart(0)}}>O</div>
         <div className='dot' onClick={()=>{setTheCuurentPart(1)}}>O</div>
         <div className='dot' onClick={()=>{setTheCuurentPart(2)}}>O</div>
-    </div>
+    </div> */}
     </div>
   )
 }

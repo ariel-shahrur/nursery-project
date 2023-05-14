@@ -12,8 +12,8 @@ function HomePage() {
       <h3>Category</h3>
       <div id="categoryTypeDiv">
         {typeSElectBoxArr.map(curr=>{
-          return curr.value==="all"||< div key={curr.key}>
-            <Link  to='/shop' style={{ textDecoration: 'none',color: '#000000'  }}>{curr.imgUrl}{curr.displayStr}</Link>
+          return curr.value==="all"||< div key={curr.key} className='homePageTypeIconItem'>
+            <Link  to={curr.link} style={{ textDecoration: 'none',color: '#000000'  }}>{curr.imgUrl}<br/>{curr.displayStr}</Link>
             </div>
         })}
       </div>

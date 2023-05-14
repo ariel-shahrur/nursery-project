@@ -4,13 +4,17 @@ import './shop.css'
 import SearchByType from './SearchByType';
 import { useFetchData } from './fetchDataHook';
 import { useState } from 'react';
+import { useParams } from 'react-router-dom';
 
 
 function Shop(props: {addToCart: Function,addToWishList:Function}) {
-
+  const typeFromHomePage=useParams().type || "all";
+  if(typeFromHomePage!=="all"){
+    
+  }
   const {data} :{data:any} = useFetchData();
-  const [type, setType] = useState('all');
-
+  const [type, setType] = useState(typeFromHomePage);
+  
   return (
     <div>
       <div id="headerDiv">

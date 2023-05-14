@@ -47,34 +47,40 @@ export const typeSElectBoxArr=[
         value:"all",
         displayStr:"all",
         imgUrl:"",
-        key:"1"
+        key:"1",
+        link:"/shop"
     },
     {
         value:"Indoor",
         displayStr:"Indoor",
         imgUrl:<img src={indoorIconForHome} alt="" />,
-        key:"2"
+        key:"2",
+        link:"/shop/Indoor"
     },
     {
         value:"Outdoor",
         displayStr:"Outdoor",
         imgUrl:<img src={outdoorIconHome} alt="" />,
-        key:"3"
+        key:"3",
+        link:"/shop/outdoor"
     },{
         value:"Succulent",
         displayStr:"Succulent",
         imgUrl:<img src={scullantIconForHome} alt="" />,
-        key:"4"
+        key:"4",
+        link:"/shop/Succulent"
     },{
-        value:"bulb",
-        displayStr:"bulb",
+        value:"Bulb",
+        displayStr:"Bulb",
         imgUrl:<img src={bulbIconHome} alt="" />,
-        key:"5"
+        key:"5",
+        link:"/shop/bulb"
     },{
         value:"Shrub",
         displayStr:"Shrub",
         imgUrl:<img src={ShrubIconHome} alt="" />,
-        key:"6"
+        key:"6",
+        link:"/shop/Shrub"
     },
     
 ]

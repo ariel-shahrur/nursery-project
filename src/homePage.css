@@ -1,18 +1,29 @@
-
-
 #categoryDiv{
     padding: 50px;
     text-align: center;
 }
 
 #categoryTypeDiv{
-    width: 50%;
+    width: 60%;
     margin: auto;
     display: flex;
-    justify-content: space-around;
+    /* justify-content: space-around; */
     margin-top: 30px;
 }
 #categoryTypeDiv img{
-    width: 100px;
+    width: 100%;
     height: 100px;
+    border-radius: 50px;
 }
+
+.homePageTypeIconItem{
+    width: 20%;
+    height: 100%;
+    border: 2px solid green;
+    margin-left: 10px;
+    border-radius: 50px;
+}
+/* .homePageTypeIconItem img{
+width: 100px;
+height: 100px;
+} */
