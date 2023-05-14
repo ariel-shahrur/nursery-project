@@ -10,6 +10,7 @@
    background-image: url("backgroundImgforhomeImgDiv.jpg");
    background-size: 100% 100%;
    background-repeat: no-repeat;
+   border-radius: 10px;
 }
 .homeImgDiv2 {
     padding: 50px;
@@ -17,6 +18,7 @@
    background-image: url("backgroundImgforhomeImgDiv1.png");
    background-size: 100% 100%;
    background-repeat: no-repeat;
+   border-radius: 10px;
 }
 .homeImgDiv3 {
     padding: 50px;
@@ -24,6 +26,7 @@
    background-image: url("backgroundImgforhomeImgDiv2.png");
    background-size: 100% 100%;
    background-repeat: no-repeat;
+   border-radius: 10px;
 }
 #rightDivHomePage{
     /* border: 2px solid red; */
@@ -38,6 +41,7 @@
     background-size: 100% 100%;
    background-repeat: no-repeat;
    margin-bottom: 20px;
+   border-radius: 10px;
 }
 
 .rightDivItemDown{
@@ -46,6 +50,7 @@
     background-image: url("outdoorImgForHomePageTitel.png");
     background-size: 100% 100%;
    background-repeat: no-repeat;
+   border-radius: 10px;
 }
 
 .dotDiv{

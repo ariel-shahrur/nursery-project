@@ -17,28 +17,29 @@ function App() {
 
   const [cart, setCart] = useState<PlantIntrfc[]>([]);
   const [wishList, setWishList] = useState<PlantIntrfc[]>([]);
+  const [cartSum, setCartSum] = useState(0);
 
   const addToCart = (plant: PlantIntrfc) => {
-    console.log('adding to cart the plant');
-    console.log(plant);
     const newCart = [...cart, plant];
     setCart(newCart);
-    console.log('new cart is')
-    console.log(newCart);
+    setCartSum(cartSum+plant.price)
   }
 
   const addToWishList = (plant: PlantIntrfc) => {
-    console.log('adding to wishlist the plant');
-    console.log(plant);
     const newWishList = [...wishList, plant];
     setWishList(newWishList);
-    console.log('new wishlist is')
-    console.log(newWishList);
   }
 
-  const removeFromCart = (indexToRemove:number)=>{
+  const removeFromCart = (indexToRemove:number,price:number)=>{
     const newCart = [...cart.slice(0, indexToRemove), ...cart.slice(indexToRemove + 1)];
     setCart(newCart);
+    setCartSum(cartSum-price)
+    
+  }
+
+  const removeFromWishList = (indexToRemove:number)=>{
+    const newWishList = [...wishList.slice(0, indexToRemove), ...wishList.slice(indexToRemove + 1)];
+    setWishList(newWishList);
   }
   
   return (
@@ -49,9 +50,9 @@ function App() {
       <Route path="/" element={<HomePage />} />
       <Route path="/shop" element={<Shop addToCart={addToCart} addToWishList={addToWishList} />} />
       <Route path="/gallery" element={<Gallery />} />
-      <Route path="/wishList" element={<WishList wishList={wishList} />} />
+      <Route path="/wishList" element={<WishList wishList={wishList} addToCart={addToCart} removeFromWishList={removeFromWishList} />} />
       <Route path="/contactus" element={<ContactUs />} />
-      <Route path="/cart" element={<Cart cart={cart} removeFromCart={removeFromCart}/>} />
+      <Route path="/cart" element={<Cart cart={cart} removeFromCart={removeFromCart} cartSum={cartSum}/>} />
       </Routes>
       <Footer></Footer>
     </div>

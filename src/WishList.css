@@ -1,0 +1,8 @@
+.wishListDiv h1{
+    text-align: center;
+}
+
+.wishListItemDiv{
+    display: flex;
+    flex-wrap: wrap;
+}

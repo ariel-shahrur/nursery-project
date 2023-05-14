@@ -1,0 +1,16 @@
+#cartDiv{
+    text-align: center;
+}
+
+#allCartItem{
+    width: 60%;
+}
+
+#CartSummeryAmountBar{
+    text-align: center;
+    width: 25%;
+    border: 2px solid rgb(150, 146, 146);
+    position: fixed;
+    right: 0;
+    top: 100px;
+}

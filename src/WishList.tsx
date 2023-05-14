@@ -1,22 +1,31 @@
 import React from 'react'
 import { PlantIntrfc } from './PlantIntrfc'
 import PlantCard from './PlantCard';
+import './WishList.css'
 
-function WishList(props:{wishList:PlantIntrfc[]}) {
+function WishList(
+  props:{
+    wishList:PlantIntrfc[],
+    addToCart:Function,
+    removeFromWishList:Function
+  }) {
   const wishList = props.wishList;
   return (
-    <div>
-    {wishList && wishList.map(( curr:PlantIntrfc)=>{ 
+    <div className='wishListDiv'>
+      <h1>My Favorite </h1>
+      <div className='wishListItemDiv'>
+    {wishList && wishList.map(( curr:PlantIntrfc,index)=>{ 
         return <PlantCard 
         name={curr.name} price={curr.price} 
         type={curr.type} season={curr.season}
          lighting_requirements={curr.lighting_requirements} 
          description={curr.description} 
          image_url={curr.image_url} key={curr.key}
-         onClick={() => {console.log('Cant add to cart from cart')}}
-         onClickWishList={()=>{}}
+         onClick={() => {props.addToCart(curr)}}
+         onClickWishList={()=>{props.removeFromWishList(index)}}
          ></PlantCard>
         })}
+        </div>
   </div>
   )
 }

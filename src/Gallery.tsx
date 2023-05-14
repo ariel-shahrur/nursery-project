@@ -8,7 +8,7 @@ function Gallery() {
   return (
     <div className='galleryDiv'>
       {data && data.map((curr:PlantIntrfc)=>{
-        return <div className='galleryImg'><img src={curr.image_url} alt="" /></div>
+        return <div key={curr.key} className='galleryImg'><img src={curr.image_url} alt="" /></div>
         })}
     </div>
   )

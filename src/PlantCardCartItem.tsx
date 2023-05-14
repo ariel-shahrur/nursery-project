@@ -12,10 +12,20 @@ function PlantCardCartItem(
 ) {
   return (
     <div className='PlantCardCartItem'>
-        <button onClick={()=>{props.onclick()}}>X</button>
+      <div className='ImgNamePricePlantCartDiv'>
         <img src={props.image_url} alt="" />
-        <h5>{props.name}</h5>
-        <h6>{props.price}$</h6>
+        <div>
+      <h5>{props.name}</h5>
+      <h6>{props.price}$</h6>
+      </div>
+        </div>
+     
+      <div>
+      <button onClick={()=>{props.onclick()}}>X</button>
+      </div>
+        
+        
+        
     </div>
   )
 }

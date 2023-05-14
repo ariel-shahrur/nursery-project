@@ -46,29 +46,35 @@ export const typeSElectBoxArr=[
     {
         value:"all",
         displayStr:"all",
-        imgUrl:""
+        imgUrl:"",
+        key:"1"
     },
     {
         value:"Indoor",
         displayStr:"Indoor",
-        imgUrl:<img src={indoorIconForHome} alt="" />
+        imgUrl:<img src={indoorIconForHome} alt="" />,
+        key:"2"
     },
     {
         value:"Outdoor",
         displayStr:"Outdoor",
-        imgUrl:<img src={outdoorIconHome} alt="" />
+        imgUrl:<img src={outdoorIconHome} alt="" />,
+        key:"3"
     },{
         value:"Succulent",
         displayStr:"Succulent",
-        imgUrl:<img src={scullantIconForHome} alt="" />
+        imgUrl:<img src={scullantIconForHome} alt="" />,
+        key:"4"
     },{
         value:"bulb",
         displayStr:"bulb",
-        imgUrl:<img src={bulbIconHome} alt="" />
+        imgUrl:<img src={bulbIconHome} alt="" />,
+        key:"5"
     },{
         value:"Shrub",
         displayStr:"Shrub",
-        imgUrl:<img src={ShrubIconHome} alt="" />
+        imgUrl:<img src={ShrubIconHome} alt="" />,
+        key:"6"
     },
     
 ]

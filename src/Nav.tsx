@@ -8,7 +8,7 @@ function Nav() {
     <div className='navBar' >
         {navItem.map(curr=>{ 
             return <div key={curr.key} className='navItem'>
-         <Link key={curr.key} to={curr.hrefStr} style={{ textDecoration: 'none',color: '#9f9b9b'  }}>{curr.displayStr}</Link>
+         <Link to={curr.hrefStr} style={{ textDecoration: 'none',color: '#9f9b9b'  }}>{curr.displayStr}</Link>
     </div>})}
     </div>
   )

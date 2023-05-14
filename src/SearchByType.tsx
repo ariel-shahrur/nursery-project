@@ -12,7 +12,7 @@ function SearchByType(props:{changeType:Function}) {
   }}>
       {typeSElectBoxArr.map((curr,i)=>{
         return (
-        <option value={curr.value}>{curr.displayStr}</option>
+        <option key={curr.key} value={curr.value}>{curr.displayStr}</option>
       )})}
     </select>  </label>
     </div>

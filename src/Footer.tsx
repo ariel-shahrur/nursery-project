@@ -31,14 +31,14 @@ function Footer() {
         <div className="footerItem">
             <h5>Our Shop</h5>
             {typeSElectBoxArr.map((curr)=>{
-        return curr.value==="all"||<div>{curr.displayStr}</div>
+        return curr.value==="all"||<div key={curr.key}>{curr.displayStr}</div>
       })}
         </div>
         <div className="footerItem">
         <h5>Fast navigation</h5>
             {navItem.map((curr,i)=>{ 
             return i===0 || <div className='footerlastDivItem' key={curr.key}>
-         <Link key={curr.key} to={curr.hrefStr} style={{ textDecoration: 'none'}}>{curr.displayStr}</Link>
+         <Link  to={curr.hrefStr} style={{ textDecoration: 'none'}}>{curr.displayStr}</Link>
     </div>})}
         </div>
     </div>

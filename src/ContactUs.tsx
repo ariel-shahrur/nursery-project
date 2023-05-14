@@ -6,9 +6,9 @@ function ContactUs() {
   const [myFormData,setMyFormData]=useState({})
   
   let updateFromData = (e:React.FormEvent<HTMLInputElement>)=>{
-    let theElemId=(e.target as HTMLInputElement).getAttribute;
+    let theElemId=(e.target as HTMLInputElement).getAttribute("id") as string;
   let thevalue=(e.target as HTMLInputElement).value;
-      // setMyFormData([...myFormData,[theElemId]:thevalue]);
+      setMyFormData({...myFormData,[theElemId]:thevalue});
   }
 
   return (
@@ -45,7 +45,7 @@ function ContactUs() {
 
     <div id="rightDiv">
       <label htmlFor="" className='allLabel'>Full name</label>
-      <input type="text" id='fullNameInpt' placeholder='Full Name' />
+      <input type="text" id='fullNameInpt' placeholder='Full Name' onInput={(e)=>{updateFromData(e)}} />
 
       <label htmlFor="" className='allLabel'>Phone number</label>
       <input type="text" id='PhoneInpt' placeholder='Phone Number'  />
