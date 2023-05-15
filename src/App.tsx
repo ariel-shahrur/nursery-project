@@ -71,7 +71,7 @@ function App() {
       <Route path="/gallery/:plantName" element={<ClickedGalleryImg  addToCart={addToCart} addToWishList={addToWishList} />} />
       <Route path="/wishList" element={<WishList wishList={wishList} addToCart={addToCart} removeFromWishList={removeFromWishList} />} />
       <Route path="/contactus" element={<ContactUs />} />
-      <Route path="/cart" element={<Cart cart={cart} removeFromCart={removeFromCart} addToCart={addToCart} cartSum={cartSum} cartItemCounter={cartItemCounter}/>} />
+      <Route path="/cart" element={<Cart cart={cart}  removeFromCart={removeFromCart} addToCart={addToCart} cartSum={cartSum} cartItemCounter={cartItemCounter}/>} />
       </Routes>
       <hr />
       <Footer></Footer>

@@ -7,7 +7,7 @@ interface CartItemCounter {
   [key: string]: number;
 }
 
-function Cart(props:{cart: PlantIntrfc[],removeFromCart:Function,addToCart:Function,cartSum:number,cartItemCounter:CartItemCounter}) {
+function Cart(props:{cart: PlantIntrfc[], removeFromCart:Function,addToCart:Function,cartSum:number,cartItemCounter:CartItemCounter}) {
  
   const cart = props.cart;
   return (
@@ -24,7 +24,7 @@ function Cart(props:{cart: PlantIntrfc[],removeFromCart:Function,addToCart:Funct
            ></PlantCardCartItem>
           })}
       </div>
-      <CartSummeryAmountBar cart={props.cart} cartSum={props.cartSum} cartItemCounter={props.cartItemCounter}></CartSummeryAmountBar>
+      <CartSummeryAmountBar cart={props.cart}  cartSum={props.cartSum} cartItemCounter={props.cartItemCounter}></CartSummeryAmountBar>
       
     </div>
   )

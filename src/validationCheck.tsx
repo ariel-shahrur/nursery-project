@@ -24,8 +24,8 @@ export const validationCheck= (theElemId:string,thevalue:string,isValid:{},setIs
           else{
             setIsEmpty({...isEmpty,PhoneInpt:true});
           }
-
-           if (thevalue.length === 10){
+          const phoneRegex=/^\d{10}$/; 
+           if (thevalue.length === 10 && phoneRegex.test(thevalue)){
              setIsValid({...isValid,PhoneInpt:true});
            }
            else{

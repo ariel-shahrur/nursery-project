@@ -57,7 +57,7 @@ function ContactUs() {
               <label htmlFor="fullNameInpt" className='allLabel'>Full name</label>
               <input type="text" id='fullNameInpt' placeholder='Full Name' onInput={(e) => { updateFromData(e) }} />
             </div>
-            {(!isValid.fullNameInpt && !isEmpty.fullNameInpt) && <div className='errorMsg'>not ok</div>}
+            {(!isValid.fullNameInpt && !isEmpty.fullNameInpt) && <div className='errorMsg'>Full Name must be at least two words</div>}
           </div>
 
           <div className='formItemDiv'>
@@ -65,7 +65,7 @@ function ContactUs() {
               <label htmlFor="PhoneInpt" className='allLabel'>Phone number</label>
               <input type="text" id='PhoneInpt' placeholder='Phone Number' onInput={(e) => { updateFromData(e) }} />
             </div>
-            {(!isValid.PhoneInpt && !isEmpty.PhoneInpt) && <div className='errorMsg'>not ok</div>}
+            {(!isValid.PhoneInpt && !isEmpty.PhoneInpt) && <div className='errorMsg'>The phone Number must be 10 numbers and include only numbers</div>}
           </div>
 
           <div className='formItemDiv'>
@@ -73,7 +73,7 @@ function ContactUs() {
               <label htmlFor="emailInpt" className='allLabel'>Email</label>
               <input type="text" id='emailInpt' placeholder='Email' onInput={(e) => { updateFromData(e) }} />
             </div>
-            {(!isValid.emailInpt && !isEmpty.emailInpt) && <div className='errorMsg'>not ok</div>}
+            {(!isValid.emailInpt && !isEmpty.emailInpt) && <div className='errorMsg'>The email must be configured like this: Exsample@gmail.com </div>}
           </div>
 
           <div className='formItemDiv'>

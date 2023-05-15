@@ -1,5 +1,6 @@
 import React from 'react'
 import './PlantCardCartItem.css'
+import { PlantIntrfc } from './PlantIntrfc';
 interface CartItemCounter {
   [key: string]: number;
 }
@@ -25,7 +26,7 @@ function PlantCardCartItem(
         </div>
      
       <div>
-      <button className='xButton' onClick={()=>{props.onclick()}}>X</button>
+      <button className='xButton' onClick={()=>{}}>X</button>
       <div className='conterDiv'>
         <button onClick={()=>{props.onclick()}}>-</button>
       <div className='numberOfCounter' >{props.cartItemCounter[props.name]}</div>
