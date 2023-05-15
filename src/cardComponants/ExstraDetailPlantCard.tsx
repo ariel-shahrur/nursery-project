@@ -1,4 +1,4 @@
-import wishListIcon from './wishListIcon.png'
+import wishListIcon from '../wishListIcon.png'
 import './plantCard.css'
 import './ExstraDetailPlantCard.css'
 

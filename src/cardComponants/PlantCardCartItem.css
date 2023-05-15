@@ -1,4 +1,4 @@
-.PlantCardCartItem{
+.PlantCardCartItem {
     width: 70%;
     height: 100px;
     border: 2px rgb(194, 191, 191) solid;
@@ -8,27 +8,27 @@
     position: relative;
 }
 
-.PlantCardCartItem img{
+.PlantCardCartItem img {
     width: 100px;
     height: 100px;
 }
 
-.ImgNamePricePlantCartDiv{
+.ImgNamePricePlantCartDiv {
     display: flex;
 }
 
-.conterDiv{
+.conterDiv {
     display: flex;
     margin-top: 20px;
 }
 
-.numberOfCounter{
+.numberOfCounter {
     width: 20px;
     border: solid 1px black;
 }
 
-.xButton{
-    position:absolute;
-    top:0;
+.xButton {
+    position: absolute;
+    top: 0;
     right: 0;
 }

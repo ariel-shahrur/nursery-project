@@ -1,40 +1,40 @@
-import { PlantIntrfc } from './PlantIntrfc';
-import PlantCard from './PlantCard';
+import { PlantIntrfc } from './intrfc/PlantIntrfc';
+import PlantCard from './cardComponants/PlantCard';
 import './shop.css'
 import SearchByType from './SearchByType';
-import { useFetchData } from './fetchDataHook';
+import { useFetchData } from './dataContext/fetchDataHook';
 import { useState } from 'react';
 import { useParams } from 'react-router-dom';
 
 
-function Shop(props: {addToCart: Function,addToWishList:Function}) {
-  const typeFromHomePage=useParams().type || "all";
-  
-  const {data} :{data:any} = useFetchData();
+function Shop(props: { addToCart: Function, addToWishList: Function }) {
+  const typeFromHomePage = useParams().type || "all";
+
+  const { data }: { data: PlantIntrfc[] } = useFetchData();
   const [type, setType] = useState(typeFromHomePage);
-  
+
   return (
     <div>
       <div id="headerDiv">
-      <h1>Our Shop</h1>
+        <h1>Our Shop</h1>
       </div>
-      
-      <SearchByType  changeType={setType} ></SearchByType>
+
+      <SearchByType changeType={setType} ></SearchByType>
 
       {<div className='productDiv'>
-      {data && data.map(( curr:PlantIntrfc)=>{ 
-          return (type === 'all' || curr.type.toLowerCase()=== type.toLowerCase()) && 
-          <PlantCard 
-          name={curr.name} price={curr.price} 
-          type={curr.type} season={curr.season}
-           lighting_requirements={curr.lighting_requirements} 
-           description={curr.description} 
-           image_url={curr.image_url} key={curr.key}
-           onClick={() => {props.addToCart(curr)}}
-           onClickWishList={()=>{props.addToWishList(curr)}}
-           ></PlantCard>
-          })}
-    </div>}
+        {data && data.map((curr: PlantIntrfc) => {
+          return (type === 'all' || curr.type.toLowerCase() === type.toLowerCase()) &&
+            <PlantCard
+              name={curr.name} price={curr.price}
+              type={curr.type} season={curr.season}
+              lighting_requirements={curr.lighting_requirements}
+              description={curr.description}
+              image_url={curr.image_url} key={curr.key}
+              onClick={() => { props.addToCart(curr) }}
+              onClickWishList={() => { props.addToWishList(curr) }}
+            ></PlantCard>
+        })}
+      </div>}
     </div>
   )
 }

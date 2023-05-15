@@ -1,26 +1,23 @@
-.productDiv{
+.productDiv {
     display: flex;
     flex-wrap: wrap;
 }
-.SearchByTypeDiv{
+
+.SearchByTypeDiv {
     margin-left: 46%;
 }
-#typeSelectBox{
+
+#typeSelectBox {
     margin-top: 20px;
     padding: 10px;
     border-radius: 3px;
 }
-#typeSelectBox *{
+
+#typeSelectBox * {
     font-weight: bold;
 }
 
-#labelFortypeSelectBox{
+#labelFortypeSelectBox {
     display: block;
     font-weight: bold;
 }
-
-
-
-
-
-

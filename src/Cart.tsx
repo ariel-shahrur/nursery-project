@@ -1,31 +1,29 @@
 import CartSummeryAmountBar from "./CartSummeryAmountBar";
-import PlantCard from "./PlantCard"
-import PlantCardCartItem from "./PlantCardCartItem";
-import { PlantIntrfc } from "./PlantIntrfc";
+import PlantCardCartItem from "./cardComponants/PlantCardCartItem";
+import { PlantIntrfc } from "./intrfc/PlantIntrfc";
 import './Cart.css'
-interface CartItemCounter {
-  [key: string]: number;
-}
+import { CartItemCounter } from "./intrfc/CartItemCounterIntrfc";
 
-function Cart(props:{cart: PlantIntrfc[], removeFromCart:Function,addToCart:Function,cartSum:number,cartItemCounter:CartItemCounter}) {
- 
+
+function Cart(props: { cart: PlantIntrfc[], removeFromCart: Function, addToCart: Function, cartSum: number, cartItemCounter: CartItemCounter }) {
+
   const cart = props.cart;
   return (
     <div id="cartDiv">
       <h1>Shopping Bag</h1>
       <div id="allCartItem">
-        {cart && cart.map(( curr:PlantIntrfc, index)=>{ 
-          return <PlantCardCartItem 
-          name={curr.name} price={curr.price} 
-           image_url={curr.image_url} key={index}
-           onclick={()=>{props.removeFromCart(index,curr.price,curr.name)}}
-           addToCart={()=>{props.addToCart(curr)}}
-           cartItemCounter={props.cartItemCounter}
-           ></PlantCardCartItem>
-          })}
+        {cart && cart.map((curr: PlantIntrfc, index) => {
+          return <PlantCardCartItem
+            name={curr.name} price={curr.price}
+            image_url={curr.image_url} key={index}
+            onclick={() => { props.removeFromCart(index, curr.price, curr.name) }}
+            addToCart={() => { props.addToCart(curr) }}
+            cartItemCounter={props.cartItemCounter}
+          ></PlantCardCartItem>
+        })}
       </div>
-      <CartSummeryAmountBar cart={props.cart}  cartSum={props.cartSum} cartItemCounter={props.cartItemCounter}></CartSummeryAmountBar>
-      
+      <CartSummeryAmountBar cart={props.cart} cartSum={props.cartSum} cartItemCounter={props.cartItemCounter}></CartSummeryAmountBar>
+
     </div>
   )
 }
