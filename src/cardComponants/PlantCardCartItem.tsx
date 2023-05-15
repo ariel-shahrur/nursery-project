@@ -25,7 +25,7 @@ function PlantCardCartItem(
       </div>
 
       <div>
-        <button className='xButton' onClick={() => { }}>X</button>
+        {/* <button className='xButton' onClick={() => { }}>X</button> */}
         <div className='conterDiv'>
           <button onClick={() => { props.onclick() }}>-</button>
           <div className='numberOfCounter' >{props.cartItemCounter[props.name]}</div>
