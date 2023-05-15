@@ -1,4 +1,4 @@
-import { typeSElectBoxArr } from './ItemsArr'
+import { seasonSelectBoxArr, typeSElectBoxArr } from './ItemsArr'
 import {  useNavigate } from 'react-router-dom';
 
 function SearchByType(props:{changeType:Function}) {
@@ -16,6 +16,7 @@ function SearchByType(props:{changeType:Function}) {
         <option key={curr.key} value={curr.value}>{curr.displayStr}</option>
       )})}
     </select>  </label>
+
     </div>
   )
 }

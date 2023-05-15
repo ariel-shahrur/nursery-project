@@ -12,7 +12,7 @@
    background-size: 100% 100%;
    background-repeat: no-repeat;
    border-radius: 10px;
-   border: 2px solid green;
+   border: 2px solid rgb(173, 195, 173);
 }
 .homeImgDiv2 {
     /* margin-top: 10px; */
@@ -23,7 +23,7 @@
    background-size: 100% 100%;
    background-repeat: no-repeat;
    border-radius: 10px;
-   border: 2px solid green;
+   border: 2px solid rgb(173, 195, 173);
 }
 .homeImgDiv3 {
     /* margin-top: 10px; */
@@ -34,7 +34,7 @@
    background-size: 100% 100%;
    background-repeat: no-repeat;
    border-radius: 10px;
-   border: 2px solid green;
+   border: 2px solid rgb(173, 195, 173);
 }
 #rightDivHomePage{
     /* border: 2px solid red; */
@@ -51,7 +51,7 @@
    background-repeat: no-repeat;
    margin-bottom: 5%;
    border-radius: 10px;
-   border: 2px solid green;
+   border: 2px solid rgb(173, 195, 173);
 }
 
 .rightDivItemDown{
@@ -61,7 +61,7 @@
     background-size: 100% 100%;
    background-repeat: no-repeat;
    border-radius: 10px;
-   border: 2px solid green;
+   border: 2px solid rgb(173, 195, 173);
 }
 
 .dotDiv{

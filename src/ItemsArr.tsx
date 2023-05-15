@@ -108,25 +108,26 @@ export const lightingSelectBoxArr=[
 
 export const seasonSelectBoxArr=[
     {
-        value:"0",
-        displayStr:"Click to choose"
+        value:"all",
+        displayStr:"all",
+        key:"0"
     },
     {
-        value:"1",
-        displayStr:"Spring"
+        value:"Spring",
+        displayStr:"Spring",
+        key:"1"
     },
     {
-        value:"2",
-        displayStr:"Summer"
+        value:"Summer",
+        displayStr:"Summer",
+        key:"2"
     },{
-        value:"3",
-        displayStr:"Autumn"
+        value:"Autumn",
+        displayStr:"Autumn",
+        key:"3"
     },{
-        value:"4",
-        displayStr:"Winter"
-    },
-    {
-        value:"5",
-        displayStr:"All-Year"
+        value:"Winter",
+        displayStr:"Winter",
+        key:"4"
     }
 ]

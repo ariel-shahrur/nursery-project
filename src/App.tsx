@@ -11,6 +11,7 @@ import WishList from './WishList';
 import { useState } from 'react';
 import { PlantIntrfc } from './PlantIntrfc';
 import { PlantCardCartItemIntrfc } from './PlantCardCartItemIntrfc';
+import ClickedGalleryImg from './ClickedGalleryImg';
 
 
 function App() {
@@ -22,7 +23,7 @@ function App() {
   const addToCart = (plant: PlantIntrfc) => {
     const newCart = [...cart, plant];
     setCart(newCart);
-    setCartSum(cartSum+plant.price)
+    setCartSum(cartSum+plant.price);
   }
 
   const addToWishList = (plant: PlantIntrfc) => {
@@ -33,7 +34,7 @@ function App() {
   const removeFromCart = (indexToRemove:number,price:number)=>{
     const newCart = [...cart.slice(0, indexToRemove), ...cart.slice(indexToRemove + 1)];
     setCart(newCart);
-    setCartSum(cartSum-price)
+    setCartSum(cartSum-price);
     
   }
 
@@ -52,6 +53,7 @@ function App() {
       <Route path="/shop" element={<Shop addToCart={addToCart} addToWishList={addToWishList} />} />
       <Route path="/shop/:type" element={<Shop addToCart={addToCart} addToWishList={addToWishList} />} />
       <Route path="/gallery" element={<Gallery />} />
+      <Route path="/gallery/:plantName" element={<ClickedGalleryImg  addToCart={addToCart} addToWishList={addToWishList} />} />
       <Route path="/wishList" element={<WishList wishList={wishList} addToCart={addToCart} removeFromWishList={removeFromWishList} />} />
       <Route path="/contactus" element={<ContactUs />} />
       <Route path="/cart" element={<Cart cart={cart} removeFromCart={removeFromCart} cartSum={cartSum}/>} />

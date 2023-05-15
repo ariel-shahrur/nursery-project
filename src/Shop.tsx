@@ -9,9 +9,7 @@ import { useParams } from 'react-router-dom';
 
 function Shop(props: {addToCart: Function,addToWishList:Function}) {
   const typeFromHomePage=useParams().type || "all";
-  if(typeFromHomePage!=="all"){
-    
-  }
+  
   const {data} :{data:any} = useFetchData();
   const [type, setType] = useState(typeFromHomePage);
   

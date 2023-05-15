@@ -61,11 +61,6 @@ setTimeout(() => {
           </div>
         </div>
     </div>
-    {/* <div className='dotDiv'>
-        <div className='dot' onClick={()=>{setTheCuurentPart(0)}}>O</div>
-        <div className='dot' onClick={()=>{setTheCuurentPart(1)}}>O</div>
-        <div className='dot' onClick={()=>{setTheCuurentPart(2)}}>O</div>
-    </div> */}
     </div>
   )
 }
