@@ -25,10 +25,10 @@ function App() {
   const [cartItemCounter, setCartItemCounter] = useState<CartItemCounter>({});
 
   const addToCart = (plant: PlantIntrfc) => {
-    setCartItemCounter({...cartItemCounter,[plant.name]:(cartItemCounter[plant.name] || 0) + 1});
-    console.log(cartItemCounter[plant.name]>1);
+    setCartItemCounter({...cartItemCounter,[plant.name]:(cartItemCounter[plant.name] || 0) + 1});// inc the counter by 1 according the name of plant
     
-    if(cartItemCounter[plant.name]>=1){
+    if(cartItemCounter[plant.name]>=1){ // Checks if the counter is greater than 1, if true skips the push to the array 
+      setCartSum(cartSum+plant.price);
       return;
     }
     const newCart = [...cart, plant];
@@ -43,8 +43,8 @@ function App() {
 
   const removeFromCart = (indexToRemove:number,price:number,plantName:string)=>{
     setCartItemCounter({...cartItemCounter,[plantName]:(cartItemCounter[plantName] || 0) -1});
-    // console.log(cartItemCounter);
     if(cartItemCounter[plantName]>1){
+      setCartSum(cartSum-price);
       return;
     }
     const newCart = [...cart.slice(0, indexToRemove), ...cart.slice(indexToRemove + 1)];
@@ -71,7 +71,7 @@ function App() {
       <Route path="/gallery/:plantName" element={<ClickedGalleryImg  addToCart={addToCart} addToWishList={addToWishList} />} />
       <Route path="/wishList" element={<WishList wishList={wishList} addToCart={addToCart} removeFromWishList={removeFromWishList} />} />
       <Route path="/contactus" element={<ContactUs />} />
-      <Route path="/cart" element={<Cart cart={cart} removeFromCart={removeFromCart} cartSum={cartSum} cartItemCounter={cartItemCounter}/>} />
+      <Route path="/cart" element={<Cart cart={cart} removeFromCart={removeFromCart} addToCart={addToCart} cartSum={cartSum} cartItemCounter={cartItemCounter}/>} />
       </Routes>
       <hr />
       <Footer></Footer>
