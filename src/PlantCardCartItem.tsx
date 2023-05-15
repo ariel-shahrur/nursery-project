@@ -10,6 +10,7 @@ function PlantCardCartItem(
     price:number,
     image_url:string,
     onclick:Function,
+    addToCart:Function,
     cartItemCounter:CartItemCounter
     }
 ) {
@@ -24,8 +25,12 @@ function PlantCardCartItem(
         </div>
      
       <div>
-      <button onClick={()=>{props.onclick()}}>X</button>
-      <div className='conterDiv'>{props.cartItemCounter[props.name]}</div>
+      <button className='xButton' onClick={()=>{props.onclick()}}>X</button>
+      <div className='conterDiv'>
+        <button onClick={()=>{props.onclick()}}>-</button>
+      <div className='numberOfCounter' >{props.cartItemCounter[props.name]}</div>
+      <button onClick={()=>{props.addToCart()}}>+</button>
+      </div>
       </div>
         
         

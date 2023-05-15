@@ -1,8 +1,11 @@
 import React, { useState } from 'react'
 import { PlantIntrfc } from './PlantIntrfc'
 import './CartSummeryAmountBar.css'
+interface CartItemCounter {
+  [key: string]: number;
+}
 
-function CartSummeryAmountBar(props:{cart:PlantIntrfc[],cartSum:number}) {
+function CartSummeryAmountBar(props:{cart:PlantIntrfc[],cartSum:number,cartItemCounter:CartItemCounter}) {
     const cart = props.cart;
    
   return ((cart.length===0&&<div></div>)|| //check if the cart is empty 
@@ -11,7 +14,7 @@ function CartSummeryAmountBar(props:{cart:PlantIntrfc[],cartSum:number}) {
             <h1>Summery</h1>
             {cart && cart.map((curr:PlantIntrfc)=>{
             return (
-                <div>{curr.price}</div>
+                <div>{curr.price} X {props.cartItemCounter[curr.name]}</div>
             )
         })}
         </div>

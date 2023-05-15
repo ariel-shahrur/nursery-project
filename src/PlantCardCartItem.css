@@ -5,6 +5,7 @@
     display: flex;
     justify-content: space-between;
     margin-bottom: 20px;
+    position: relative;
 }
 
 .PlantCardCartItem img{
@@ -17,5 +18,17 @@
 }
 
 .conterDiv{
+    display: flex;
+    margin-top: 20px;
+}
+
+.numberOfCounter{
+    width: 20px;
     border: solid 1px black;
+}
+
+.xButton{
+    position:absolute;
+    top:0;
+    right: 0;
 }
