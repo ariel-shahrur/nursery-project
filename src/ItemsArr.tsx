@@ -45,7 +45,7 @@ export const navItem = [
 export const typeSElectBoxArr=[
     {
         value:"all",
-        displayStr:"all",
+        displayStr:"All",
         imgUrl:"",
         key:"1",
         link:"/shop"

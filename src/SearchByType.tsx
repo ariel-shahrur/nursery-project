@@ -5,8 +5,8 @@ function SearchByType(props:{changeType:Function}) {
   const navigate = useNavigate();
 
   return (
-    <div>
-   <label>search by type:
+    <div className='SearchByTypeDiv'>
+   <label id='labelFortypeSelectBox'>search by type:</label>
   <select name="typeSelectBox" id="typeSelectBox" onChange={(event)=>{
     navigate(`/shop/${event.target.value}`);// to change the url according the select on the selectbox
       props.changeType(event.target.value);
@@ -15,7 +15,7 @@ function SearchByType(props:{changeType:Function}) {
         return (
         <option key={curr.key} value={curr.value}>{curr.displayStr}</option>
       )})}
-    </select>  </label>
+    </select>  
 
     </div>
   )

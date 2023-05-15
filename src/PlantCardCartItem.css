@@ -15,3 +15,7 @@
 .ImgNamePricePlantCartDiv{
     display: flex;
 }
+
+.conterDiv{
+    border: solid 1px black;
+}
