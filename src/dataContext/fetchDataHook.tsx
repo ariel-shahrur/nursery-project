@@ -15,3 +15,17 @@ export const useFetchData = () => {
 
   return { data }
 };
+
+export const useFetchDataFromServer = () => {
+  const [data, setData] = useState<PlantIntrfc[]>([]);
+//https://mocki.io/v1/3cfd5518-0129-4542-ba6d-e495eedba161
+  useEffect(() => {
+    fetch("http://localhost:3001/")
+      .then(dataStr => { return dataStr.json() })
+      .then(dataObj => {
+        setData(dataObj.recordsets);
+      })
+  }, [])
+
+  return { data }
+};

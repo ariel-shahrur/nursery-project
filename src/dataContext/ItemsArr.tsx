@@ -36,9 +36,14 @@ export const navItem = [
         key: "6"
     },
     {
+        displayStr: "Log in",
+        hrefStr: "/login",
+        key: "7"
+    },
+    {
         displayStr: "Cart",
         hrefStr: "/cart",
-        key: "7"
+        key: "8"
     }
 ];
 
