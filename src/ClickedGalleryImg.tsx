@@ -1,16 +1,13 @@
 import { useParams } from 'react-router-dom'
-import { useFetchData } from './dataContext/fetchDataHook';
-import { PlantIntrfc } from './intrfc/PlantIntrfc';
-import ExstraDetailPlantCard from './cardComponants/ExstraDetailPlantCard';
 
-function ClickedGalleryImg(props: { addToCart: Function, addToWishList: Function }) {//component for navigate to bigger plant card when clicked on img in gallery
-  const { data }: { data:PlantIntrfc[] } = useFetchData();
+function ClickedGalleryImg() {//component for navigate to bigger plant card when clicked on img in gallery
+  // const { data }: { data:PlantIntrfc[] } = useFetchData();
 
 
   const plantName = useParams().plantName || "";
   return (
     <div>
-      {data && data.map((curr: PlantIntrfc) => {
+      {/* {data && data.map((curr: PlantIntrfc) => {
         if (curr.name === plantName) {
           return <ExstraDetailPlantCard
             name={curr.name} price={curr.price}
@@ -22,7 +19,7 @@ function ClickedGalleryImg(props: { addToCart: Function, addToWishList: Function
             onClickWishList={() => { props.addToWishList(curr) }}
           ></ExstraDetailPlantCard>
         }
-      })}
+      })} */}
     </div>
   )
 }

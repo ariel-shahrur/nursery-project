@@ -25,11 +25,11 @@ export const navItem = [
         hrefStr: "/gallery",
         key: "4"
     },
-    {
-        displayStr: "Wish List",
-        hrefStr: "/wishList",
-        key: "5"
-    },
+    // {
+    //     displayStr: "Wish List",
+    //     hrefStr: "/wishList",
+    //     key: "5"
+    // },
     {
         displayStr: "Contact",
         hrefStr: "/contactus",

@@ -1,29 +1,37 @@
 import { useState, useEffect } from 'react';
-import { PlantIntrfc } from '../intrfc/PlantIntrfc';
+import { CartItemIntrfc } from '../intrfc/CartItemIntrfc';
+import Cookies from 'js-cookie';
 
-
-export const useFetchData = () => {
-  const [data, setData] = useState<PlantIntrfc[]>([]);
-//https://mocki.io/v1/3cfd5518-0129-4542-ba6d-e495eedba161
+export const useFetchDataFromServer = () => {
+  const [data, setData] = useState<CartItemIntrfc[]>([]);
   useEffect(() => {
-    fetch("https://mocki.io/v1/8328dd7a-7c64-4dc2-b56b-18db7f257cc3")
+    fetch("http://127.0.0.1:3005/")
       .then(dataStr => { return dataStr.json() })
       .then(dataObj => {
-        setData(dataObj.plants);
+        setData(dataObj.recordsets[0]);
+        // console.log("data from hook",data);
       })
   }, [])
 
   return { data }
 };
 
-export const useFetchDataFromServer = () => {
-  const [data, setData] = useState<PlantIntrfc[]>([]);
-//https://mocki.io/v1/3cfd5518-0129-4542-ba6d-e495eedba161
+
+
+export const useFetchCartItemData = () => {
+  const bearerToken = Cookies.get('token');
+
+const fetchOptions = {
+  headers: {
+    Authorization: `Bearer ${bearerToken}`,
+  }
+};
+  const [data, setData] = useState<CartItemIntrfc[]>([]);
   useEffect(() => {
-    fetch("http://localhost:3001/")
+    fetch("http://127.0.0.1:3005/cart/",fetchOptions)
       .then(dataStr => { return dataStr.json() })
       .then(dataObj => {
-        setData(dataObj.recordsets);
+        setData(dataObj);
       })
   }, [])
 

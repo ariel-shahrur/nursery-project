@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import './contactUs.css'
-import { validationCheck } from './validationCheck'
+import { validationCheck } from './validationCheckConactUs'
 
 function ContactUs() {
 

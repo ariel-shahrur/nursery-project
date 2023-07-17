@@ -1,16 +1,17 @@
-import { PlantIntrfc } from './intrfc/PlantIntrfc';
 import PlantCard from './cardComponants/PlantCard';
 import './shop.css'
 import SearchByType from './SearchByType';
-import { useFetchData } from './dataContext/fetchDataHook';
+import { useFetchDataFromServer } from './dataContext/fetchDataHook';
 import { useState } from 'react';
 import { useParams } from 'react-router-dom';
+import { PlantIntrfcNew } from './intrfc/PlantIntrfcNew';
 
 
-function Shop(props: { addToCart: Function, addToWishList: Function }) {
+function Shop() {
   const typeFromHomePage = useParams().type || "all";
 
-  const { data }: { data: PlantIntrfc[] } = useFetchData();
+  const { data }: { data: any } = useFetchDataFromServer();
+  
   const [type, setType] = useState(typeFromHomePage);
 
   return (
@@ -22,16 +23,12 @@ function Shop(props: { addToCart: Function, addToWishList: Function }) {
       <SearchByType changeType={setType} ></SearchByType>
 
       {<div className='productDiv'>
-        {data && data.map((curr: PlantIntrfc) => {
-          return (type === 'all' || curr.type.toLowerCase() === type.toLowerCase()) &&
+        {data && data.map((curr: PlantIntrfcNew) => {
+          // console.log(curr.id);
+          
+          return (type === 'all' || curr.typeName.toLowerCase() === type.toLowerCase()) &&
             <PlantCard
-              name={curr.name} price={curr.price}
-              type={curr.type} season={curr.season}
-              lighting_requirements={curr.lighting_requirements}
-              description={curr.description}
-              image_url={curr.image_url} key={curr.key}
-              onClick={() => { props.addToCart(curr) }}
-              onClickWishList={() => { props.addToWishList(curr) }}
+              plant={curr} key={curr.id}
             ></PlantCard>
         })}
       </div>}
