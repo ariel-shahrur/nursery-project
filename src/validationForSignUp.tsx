@@ -1,5 +1,3 @@
-import { useState } from "react";
-
 const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 const minLength = 8;
   const maxLength = 30;

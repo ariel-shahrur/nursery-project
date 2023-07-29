@@ -5,7 +5,7 @@ import { handlerForAddToCart,handlerForRemoveFromCart } from "../btnHandlers/han
 
 function CartItemNew(
   props: {
-    cartItem:CartItemIntrfc
+    cartItem:CartItemIntrfc,
   }
 
 ) {
@@ -21,8 +21,8 @@ function CartItemNew(
 
       <div>
         <div className='conterDiv'>
-          <button onClick={()=>{handlerForRemoveFromCart(props.cartItem.plantId);}}>-</button>
-          <button onClick={()=>{handlerForAddToCart(props.cartItem.plantId);}}>+</button >
+          <button onClick={()=>{handlerForRemoveFromCart(props.cartItem.plantId);  window.location.reload()}}>-</button>
+          <button onClick={()=>{handlerForAddToCart(props.cartItem.plantId); window.location.reload()}}>+</button >
           <div className='numberOfCounter' >{props.cartItem.quantity}</div>
         </div>
       </div>

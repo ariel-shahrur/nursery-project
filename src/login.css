@@ -45,3 +45,7 @@ input{
 .validationDiv{
   color: red;
 }
+
+#h1LoginSucss{
+  text-align: center;
+}

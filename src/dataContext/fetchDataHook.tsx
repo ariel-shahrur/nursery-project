@@ -20,7 +20,6 @@ export const useFetchDataFromServer = () => {
 
 export const useFetchCartItemData = () => {
   const bearerToken = Cookies.get('token');
-
 const fetchOptions = {
   headers: {
     Authorization: `Bearer ${bearerToken}`,
@@ -34,6 +33,6 @@ const fetchOptions = {
         setData(dataObj);
       })
   }, [])
-
   return { data }
 };
+

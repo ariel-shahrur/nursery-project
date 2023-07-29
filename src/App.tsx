@@ -7,17 +7,21 @@ import Cart from './Cart';
 import ContactUs from './ContactUs';
 import Gallery from './Gallery';
 import Shop from './Shop';
-// import { PlantIntrfc } from './intrfc/PlantIntrfc';
 import ClickedGalleryImg from './ClickedGalleryImg';
+import { navItem } from './dataContext/ItemsArr'
 import Login from './Login';
+import { useState } from 'react';
+import Cookies from 'js-cookie';
 
 
 function App() {
 
+  const [isConncted,setIsConncted]=useState(!!Cookies.get('token'));
+
   return (
 
     <div className="App">
-      <Nav></Nav>
+      <Nav navItems={navItem} isConncted={isConncted} ></Nav>
       <hr />
       <Routes>
         <Route path="/" element={<HomePage />} />
@@ -27,8 +31,8 @@ function App() {
         <Route path="/gallery/:plantName" element={<ClickedGalleryImg />} />
         {/* <Route path="/wishList" element={<WishList wishList={wishList} addToCart={addToCart} removeFromWishList={removeFromWishList} />} /> */}
         <Route path="/contactus" element={<ContactUs />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/cart" element={<Cart />} />
+        <Route path="/login"  element={<Login isConnected={isConncted} setIsConncted={setIsConncted} />} />
+        <Route path="/cart" element={<Cart  />} />
       </Routes>
       <hr />
       <Footer></Footer>

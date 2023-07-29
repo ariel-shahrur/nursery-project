@@ -3,9 +3,17 @@ import Cookies from 'js-cookie';
 import {singUpValidationHandler} from './validationForSignUp'
 
 import './login.css'
+const expirationTimeInSeconds = 120; // 5 minutes
+
+const expirationDate = new Date();
+expirationDate.setTime(expirationDate.getTime() + expirationTimeInSeconds * 1000);
 
 
-function Login() {
+
+
+
+function Login(props:{setIsConncted:Function, isConnected: boolean}) {
+  const [token, setToken] = useState(Cookies.get('token'));
     const [formData, setFormData] = useState({
         username: '',
         email: '',
@@ -47,11 +55,12 @@ function Login() {
       };
 
       const handleSubmit = (event:React.FormEvent<HTMLFormElement>) => {
+        event.preventDefault();
         if(!formData.username || !formData.email || !formData.password || !formData.confirmPassword){
           console.log("you must provide all data");
+          return;
         }
         if(!validation.username && !validation.email && !validation.password && !validation.confirmPassword){
-          event.preventDefault();
           // Send the POST request
           fetch('http://127.0.0.1:3005/signup', {
             method: 'POST',
@@ -64,13 +73,16 @@ function Login() {
               // Handle errors
               console.error(error);
             });
+            ((document.getElementsByName('username')[0]) as HTMLInputElement).value="";
+            ((document.getElementsByName('email')[0]) as HTMLInputElement).value="";
+            ((document.getElementsByName('password')[0]) as HTMLInputElement).value="";
+            ((document.getElementsByName('confirmPassword')[0]) as HTMLInputElement).value="";
         }
         
       };
     
       const handleLogin = (event:React.FormEvent<HTMLFormElement>) => {
         event.preventDefault();
-        // Send the POST request
         fetch('http://127.0.0.1:3005/login', {
           method: 'POST',
           headers: {
@@ -80,18 +92,30 @@ function Login() {
         })
           .then((response) => response.json())
           .then((data) => {
-            Cookies.set('token', data.token);
+            if (data.token) {
+              // Cookies.set('token', data.token);
+              document.cookie = `token= ${data.token}; max-age=${expirationTimeInSeconds}; expires=${expirationDate.toUTCString()}; path=/`;
+              setToken(data.token);
+              props.setIsConncted(true);
+            }
+            else {
+              alert('wrong credentials');
+            }
           })
           .catch((error) => {
             // Handle errors
             console.error(error);
+            
           });
       };
 
 
   return (
-    <div className='signUpDiv'>
+    <div>
+    {(props.isConnected && <h1 id='h1LoginSucss'>loged in succses</h1>)||
+      <div className='signUpDiv'>
       <div className='rightDiv'>
+
         <form onSubmit={(e)=>{handleSubmit(e)}}>
           <h1>Sign Up</h1>
             <label  htmlFor="">User Name:
@@ -115,13 +139,15 @@ function Login() {
             </ul></div>}
             </label>
             <label htmlFor="">Config Password:
-            <input type="text" placeholder=" config you'r password" name='confirmPassword' onChange={(e)=>{handleForChangeEvent(e)}}/>
-            {validation.confirmPassword && <div className='validationDiv'>the password not mutch</div>}
+            <input type="text" placeholder=" confirm you'r password" name='confirmPassword' onChange={(e)=>{handleForChangeEvent(e)}}/>
+            {validation.confirmPassword && <div className='validationDiv'>the password not match</div>}
             </label>
             <button type = 'submit' className='subBtn'>submit</button>
         </form>
         </div>
         <div className='leftDiv'></div>
+
+
         <form onSubmit={(e)=>{handleLogin(e)}}>
         <h1>Log in</h1>
             <label  htmlFor="">User Name:
@@ -132,6 +158,8 @@ function Login() {
             </label>
             <button type = 'submit' className='subBtn'>log in</button>
         </form>
+    </div>}
+    {props.isConnected && <div><button onClick={()=>{Cookies.remove('token'); props.setIsConncted(false);}}>log out</button></div> }
     </div>
   )
 }

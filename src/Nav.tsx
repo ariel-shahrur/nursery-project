@@ -1,15 +1,23 @@
 import React from 'react'
-import { navItem } from './dataContext/ItemsArr'
+
 import { Link } from 'react-router-dom'
 import './Nav.css'
+import Cookies from 'js-cookie'
+const token= Cookies.get('token');
 
-function Nav() {
+
+function Nav(props: {navItems: any[],isConncted:boolean}) {
   return (
     <div className='navBar' >
-      {navItem.map(curr => {
-        return <div key={curr.key} className='navItem'>
+      {props.navItems.map(curr => {
+        if (curr.hrefStr === '/login') {
+          return (<div key={curr.key} className='navItem'>
+                  <Link to={curr.hrefStr} style={{ textDecoration: 'none', color: '#77b05b' }}>{props.isConncted ? 'Log out' : 'Log in'}</Link>
+                 </div>)
+        }
+        return (<div key={curr.key} className='navItem'>
           <Link to={curr.hrefStr} style={{ textDecoration: 'none', color: '#77b05b' }}>{curr.displayStr}</Link>
-        </div>
+        </div>)
       })}
     </div>
   )

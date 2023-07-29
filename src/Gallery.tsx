@@ -5,7 +5,6 @@ import { PlantIntrfcNew } from './intrfc/PlantIntrfcNew';
 
 function Gallery() {
   const { data }: { data: any } = useFetchDataFromServer();
-  console.log("data from gallery",data);
 
   return (
     <div className='galleryDiv'>
